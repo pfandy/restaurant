@@ -1,0 +1,121 @@
+/* iphoneのmargin補正 */
+html, body {
+  overflow-x: hidden;
+}
+
+/* adjustment for footer position */
+body {
+  min-height: 100vh;
+  position: relative;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  overflow-y: hidden;
+}
+
+
+/* font-size */
+
+html {
+  font-size: 16px;
+}
+h1 {
+  font-size: $f3;
+}
+h2 {
+  font-size: $f4;
+}
+h3 {
+  font-size: $f5;
+}
+h4 {
+  font-size: $f6;
+}
+h5 {
+  font-size: $f7;
+}
+h6 {
+  font-size: $f8;
+}
+
+/* font-family */
+
+* {
+  font-family: $f-yuGothic;
+}
+
+/* Responsive container */
+
+$mq-sp: "screen and (min-width: #{$bp-sp}px)";
+$mq-tablet: "screen and (min-width: #{$bp-tablet}px)";
+$mq-pc: "screen and (min-width: #{$bp-pc}px)";
+
+// mainly for header, main and footer
+@mixin wrapper-full {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// for inner container
+.container {
+  width: calc(100% - #{$container-marginLR}px);
+  margin-left: #{$container-marginL}px;
+  margin-right: #{$container-marginR}px;
+
+  @media #{$mq-pc} {
+    width: #{$bp-pc - $container-marginLR}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin container-wide {
+  &.container-wide {
+    @media #{$mq-pc} {
+      width: auto;
+      margin-left: calc(((100vw - #{$bp-pc}px) / 4) * -1);
+      margin-right: calc(((100vw - #{$bp-pc}px) / 4) * -1);
+    }
+  }
+}
+
+@mixin container-full {
+  &.container-full {
+    width: auto;
+    margin-left: -10px;
+    margin-right: -10px;
+  
+    @media #{$mq-pc} {
+      width: auto;
+      margin-left: calc(((100vw - #{$bp-pc - $container-marginLR}px) / 2) * -1);
+      margin-right: calc(((100vw - #{$bp-pc - $container-marginLR}px) / 2) * -1);
+    }
+  }
+}
+
+@mixin container-narrow {
+  &.container-narrow {
+    @media #{$mq-sp} {
+      padding-left: calc(((100vw - #{$bp-sp}px) / #{$bp-tablet - $bp-sp}) * #{$bp-tablet * $container-paddingL});
+      padding-right: calc(((100vw - #{$bp-sp}px) / #{$bp-tablet - $bp-sp}) * #{$bp-tablet * $container-paddingR});
+    }
+    @media #{$mq-tablet} {
+      padding-left: #{$bp-tablet * $container-paddingL}px;
+      padding-right: #{$bp-tablet * $container-paddingR}px;
+    }
+  }
+}
+
+
+/* anchor setting */
+a, button {
+  color: #000;
+  text-decoration: none;
+  transition: .2s all 0s linear;
+}
+a:hover, button:hover {
+  opacity: .7;
+}

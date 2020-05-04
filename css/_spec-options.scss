@@ -1,0 +1,50 @@
+// font-size
+// scale: 1.25
+$f1: 5.96rem;
+$f2: 4.768rem;
+$f3: 3.815rem;
+$f4: 3.052rem;
+$f5: 2.441rem;
+$f6: 1.953rem;
+$f7: 1.563rem;
+$f8: 1.25rem;
+$f9: 1rem;
+$f10: .8rem;
+$f11: .64rem;
+$f12: .512rem;
+
+
+// font-family
+// used for conomiti
+$f-yuGothic: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+
+//Itarian restaurant
+$noto-sans: "Noto Sans JP",-apple-system,BlinkMacSystemFont,"ヒラギノ角ゴシック W3","Hiragino Sans",YuGothic,"メイリオ",Meiryo,sans-serif;
+$pattaya: 'Pattaya', 'Galada', 'Satisfy', cursive, sans-serif;
+$quicksand: 'Quicksand', 'Muli', 'Spartan', sans-serif;
+
+// bp-spからbp-tabletまではpaddingが増加
+// bp-tabletからbp-pcまではpaddingが一定
+// bp-pc以降はwidthが一定でmarginがauto
+
+// break point
+$bp-sp: 450; // unit: px
+$bp-tablet: 768; // unit: px
+$bp-pc: 1140; // unit: px
+
+// responsive margin @sp
+$container-marginL: 10; // unit: px
+$container-marginR: 10; // unit: px
+$container-marginLR: $container-marginR + $container-marginL;
+
+// responsive padding @pc
+$container-paddingL: .08; // unit: %
+$container-paddingR: .08; // unit: %
+
+// color
+// Itarian restaurant
+$c1: #fcfee8;
+$c2: #e9ebdd;
+$c3: #3c2a25;
+$c4: #ff5411;
+
